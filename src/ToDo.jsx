@@ -4,11 +4,11 @@ function TodosPage() {
   const [userId, setUserId] = useState("");
   const [todos, setTodos] = useState([]);
 
-  const handleUserIdChange = (event) => {
+  const handleUserId = (event) => {
     setUserId(event.target.value);
   };
 
-  const handleGetTodosClick = () => {
+  const handleChange = () => {
     const data = `https://jsonplaceholder.typicode.com/todos?userId=${userId}`;
 
     fetch(data)
@@ -28,10 +28,10 @@ function TodosPage() {
           type="text"
           id="user-id"
           value={userId}
-          onChange={handleUserIdChange}
+          onChange={handleUserId}
           className="input"
         />
-        <button onClick={handleGetTodosClick} className="button">
+        <button onClick={handleChange} className="button">
           Get Todos
         </button>
       </div>
